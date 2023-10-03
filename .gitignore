@@ -1,0 +1,9 @@
+# Virtual Environments
+env/
+
+# Cahce
+__pycache__/
+
+# Compiled Python Files
+*.pyc
+*.pyo
