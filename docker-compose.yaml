@@ -1,0 +1,31 @@
+version: '3'
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    networks:
+      - fastapi_redis_network
+
+  fastapi_app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    networks:
+      - fastapi_redis_network
+
+  redisinsight:
+    image: "redislabs/redisinsight:latest"
+    ports:
+      - "8001:8001"
+    networks:
+      - fastapi_redis_network
+    depends_on:
+      - redis
+
+networks:
+  fastapi_redis_network:
+    driver: bridge
