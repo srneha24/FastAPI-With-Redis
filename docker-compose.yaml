@@ -17,9 +17,10 @@ services:
     networks:
       - fastapi_redis_network
     environment:
-      - DOCKER_CONTAINER_IP=172.19.0.2
+      - DOCKER_CONTAINER_IP=172.19.0.2 # The IP Address of the redis image inside the container
 
   redisinsight:
+    # Using it to visualise the data
     image: "redislabs/redisinsight:latest"
     ports:
       - "8001:8001"
