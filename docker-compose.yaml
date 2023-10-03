@@ -16,6 +16,8 @@ services:
       - redis
     networks:
       - fastapi_redis_network
+    environment:
+      - DOCKER_CONTAINER_IP=172.19.0.2
 
   redisinsight:
     image: "redislabs/redisinsight:latest"

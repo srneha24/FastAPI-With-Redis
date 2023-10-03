@@ -7,3 +7,6 @@ __pycache__/
 # Compiled Python Files
 *.pyc
 *.pyo
+
+# Environment Settings
+.env
