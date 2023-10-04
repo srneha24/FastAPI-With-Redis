@@ -4,7 +4,7 @@ from celery import Celery
 
 from env_vars import FASTAPI_IP
 
-app = Celery()
+app = Celery('scheduler')
 app.config_from_object('config')
 
 
