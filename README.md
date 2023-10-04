@@ -11,7 +11,7 @@ This project was made on WSL2.
 - Celery Beat - _To automate the scheduling_
 
 ### Build
-- Create an envionment file, titled `.env`, with the follwing variables
+- Create an envionment file, titled `.env` on the same root as the docker-compose, with the follwing variables
     - **DOCKER_CONTAINER_IP:** The IP address of the redis-stack image inside the container
     - **FASTAPI_IP:** The IP address of the fastapi_app image inside the container
 
