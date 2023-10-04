@@ -7,6 +7,8 @@ This project was made on WSL2.
 - FastAPI
 - Redis
 - Redisinsight
+- Celery
+- Celery Beat
 
 ### Build
 To build the project, run the following command on your console of choice
