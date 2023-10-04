@@ -9,7 +9,7 @@ result_serializer = 'json'
 accept_content = ['json']
 timezone = 'UTC'
 
-CELERY_BEAT_SCHEDULE = {
+beat_schedule = {
     'run-every-15-seconds': {
         'task': 'scheduler.increment_value',
         'schedule': timedelta(seconds=15),
