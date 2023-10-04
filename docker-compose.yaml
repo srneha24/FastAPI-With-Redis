@@ -23,8 +23,8 @@ services:
       - redis-stack
     networks:
       - fastapi_redis_network
-    environment:
-      - DOCKER_CONTAINER_IP=172.23.0.2 # The IP Address of the redis image inside the container
+    env_file:
+      - .env
 
   celery_app:
     container_name: celery_app
@@ -35,9 +35,8 @@ services:
       - fastapi_app
     networks:
       - fastapi_redis_network
-    environment:
-      - DOCKER_CONTAINER_IP=172.23.0.2 # The IP Address of the redis image inside the container
-      - FASTAPI_IP=172.23.0.3 # The IP Address of the fastapi service
+    env_file:
+      - .env
 
 networks:
   fastapi_redis_network:

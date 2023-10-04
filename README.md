@@ -4,18 +4,23 @@ This project was made on WSL2.
 
 ### USED TOOLS AND TECHNOLOGIES
 
-- FastAPI
-- Redis
-- Redisinsight
-- Celery
-- Celery Beat
+- FastAPI - _As an HTTP server_
+- Redis - _As a cache service_
+- Redisinsight - _To visualise Redis data on a GUI_
+- Celery - _As a scheduler_
+- Celery Beat - _To automate the scheduling_
 
 ### Build
-To build the project, run the following command on your console of choice
+- Create an envionment file, titled `.env`, with the follwing variables
+    - **DOCKER_CONTAINER_IP:** The IP address of the redis-stack image inside the container
+    - **FASTAPI_IP:** The IP address of the fastapi_app image inside the container
 
-```
-docker-compose build
-```
+
+- To build the project, run the following command on your console of choice
+
+    ```
+    docker-compose build
+    ```
 
 ### RUN
 To run this project, run the following command on your console of choice
