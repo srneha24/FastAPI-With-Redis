@@ -36,5 +36,13 @@ async def retrive_hset_by_key(request: Request, name: str = Path(...)):
 
     return JSONResponse(content=result, status_code=302)
 
+
+@app.post("/redis/{name}")
+async def increment_field(request: Request, name: str = Path(...)):
+    redis = Redis()
+    result = await redis.increment_value(name)
+
+    return JSONResponse(content=result, status_code=302)
+
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

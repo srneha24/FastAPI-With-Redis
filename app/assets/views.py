@@ -21,3 +21,8 @@ class Redis:
 
     async def retrive(self, name, key):
         return await self.__redis_client.hget(name, key)
+
+    async def increment_value(self, name):
+        await self.__redis_client.hincrby(name=name, key="count", amount=1)
+
+        return await self.__redis_client.hgetall(name=name)
